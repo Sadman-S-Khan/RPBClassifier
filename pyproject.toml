@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling>=1.18"]
+build-backend = "hatchling.build"
+
+[project]
+name = "rpboost"
+dynamic = ["version"]
+description = "Residual Prototype Boosting (RPB): a scikit-learn compatible gradient-boosting classifier with smooth prototype weak learners"
+readme = "README.md"
+license = "BSD-3-Clause"
+license-files = ["LICENSE"]
+authors = [{ name = "Sadman Sadik Khan", email = "sadmansadik.cse@gmail.com" }]
+maintainers = [{ name = "Sadman Sadik Khan", email = "sadmansadik.cse@gmail.com" }]
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=1.22",
+    "scikit-learn>=1.2",
+]
+keywords = ["machine learning", "classification", "boosting", "gradient boosting",
+            "prototype", "scikit-learn", "tabular data"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7", "pandas"]
+
+[project.urls]
+Homepage = "https://github.com/Sadman-S-Khan/RPBClassifier"
+Repository = "https://github.com/Sadman-S-Khan/RPBClassifier"
+Issues = "https://github.com/Sadman-S-Khan/RPBClassifier/issues"
+
+[tool.hatch.version]
+path = "src/rpboost/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/rpboost"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
